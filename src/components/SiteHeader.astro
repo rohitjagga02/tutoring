@@ -1,30 +1,28 @@
 ---
-import { navLinks } from "../lib/site";
-
-const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+import { basePath, navLinks } from "../lib/site";
 ---
 
 <header class="sticky top-0 z-20 border-b border-[color:var(--line)] bg-[rgba(247,244,236,0.78)] backdrop-blur-xl">
   <div class="section-shell flex flex-wrap items-center justify-between gap-4 py-4">
-    <a href={withBase("/")} class="flex items-center gap-3">
+    <a href={basePath("/")} class="flex items-center gap-3">
       <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-[color:var(--ink)] text-sm font-extrabold uppercase tracking-[0.18em] text-white">
         RJ
       </span>
       <div>
         <div class="text-sm font-extrabold uppercase tracking-[0.18em] text-[color:var(--accent)]">RJ Tutoring</div>
-        <div class="text-sm text-[color:var(--muted)]">SAT, ACT, and high school math support</div>
+        <div class="text-sm text-[color:var(--muted)]">SAT, ACT, and math tutoring</div>
       </div>
     </a>
 
     <nav class="flex flex-wrap items-center justify-end gap-x-5 gap-y-2 text-sm font-semibold text-[color:var(--muted)]">
       {
         navLinks.map((link) => (
-          <a class="transition-colors hover:text-[color:var(--ink)]" href={withBase(link.href)}>
+          <a class="transition-colors hover:text-[color:var(--ink)]" href={basePath(link.href)}>
             {link.label}
           </a>
         ))
       }
-      <a class="button-primary !px-4 !py-2 !text-sm" href={withBase("/contact")}>Request Tutoring</a>
+      <a class="button-primary !px-4 !py-2 !text-sm" href={basePath("/contact")}>Request Tutoring</a>
     </nav>
   </div>
 </header>

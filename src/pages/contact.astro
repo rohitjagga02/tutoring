@@ -1,6 +1,5 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import SectionHeading from "../components/SectionHeading.astro";
 import { contactFields } from "../lib/site";
 ---
 
@@ -9,20 +8,19 @@ import { contactFields } from "../lib/site";
   description="Reach out to RJ Tutoring to discuss SAT, ACT, or high school math tutoring needs."
 >
   <section class="section-shell pt-12 md:pt-18">
-    <SectionHeading
-      eyebrow="Contact"
-      title="Start with a tutoring inquiry"
-      description="Share a few details about the student, the subject area, and the goals. That will make it easier to discuss fit, scheduling, and the best place to begin."
-    />
+    <div class="max-w-3xl">
+      <div class="eyebrow">Contact</div>
+      <h1 class="mt-4 text-5xl leading-tight text-[color:var(--ink)] md:text-6xl">Request Tutoring</h1>
+      <p class="mt-5 text-base leading-8 text-[color:var(--muted)] md:text-lg">
+        Share a few details about the student and what kind of help you are looking for.
+      </p>
+    </div>
   </section>
 
   <section class="section-shell mt-12">
     <div class="grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
       <div class="surface-card p-8 md:p-10">
         <h2 class="text-3xl text-[color:var(--ink)]">What to include</h2>
-        <p class="mt-4 text-sm leading-7 text-[color:var(--muted)]">
-          A strong first message makes it easier to understand goals and suggest the right next step.
-        </p>
         <ul class="mt-6 grid gap-3 text-sm leading-7 text-[color:var(--muted)]">
           {
             contactFields.map((field) => (
@@ -40,7 +38,7 @@ import { contactFields } from "../lib/site";
           <div class="rounded-[1.5rem] border border-[color:var(--line)] bg-white/70 p-6">
             <h3 class="text-2xl text-[color:var(--ink)]">Google Form placeholder</h3>
             <p class="mt-3 text-sm leading-7 text-[color:var(--muted)]">
-              Replace this section with an embedded Google Form for incoming tutoring inquiries.
+              Add your Google Form here when you are ready.
             </p>
             <!-- TODO: Replace this placeholder with your real Google Form embed code. -->
             <div class="mt-5 rounded-[1.25rem] border border-dashed border-[color:var(--line)] bg-[color:var(--surface-soft)] px-5 py-10 text-center text-sm font-semibold text-[color:var(--muted)]">
@@ -51,7 +49,7 @@ import { contactFields } from "../lib/site";
           <div class="rounded-[1.5rem] border border-[color:var(--line)] bg-white/70 p-6">
             <h3 class="text-2xl text-[color:var(--ink)]">Email placeholder</h3>
             <p class="mt-3 text-sm leading-7 text-[color:var(--muted)]">
-              Families who prefer email can use the placeholder button below until the real business email is added.
+              Use this button after replacing the placeholder email address.
             </p>
             <!-- TODO: Replace your-email@example.com with your real tutoring email address. -->
             <div class="mt-5">

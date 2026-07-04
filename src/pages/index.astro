@@ -1,33 +1,25 @@
 ---
-import FaqList from "../components/FaqList.astro";
-import SectionHeading from "../components/SectionHeading.astro";
-import SubjectCard from "../components/SubjectCard.astro";
 import MainLayout from "../layouts/MainLayout.astro";
-import { approachPillars, credentialHighlights, faqItems, subjectGroups } from "../lib/site";
-
-const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
-const previewSubjects = subjectGroups.flatMap((group) => group.subjects).slice(0, 6);
+import { assetPath, basePath, credentialHighlights, subjectList } from "../lib/site";
 ---
 
 <MainLayout
   title="RJ Tutoring | SAT, ACT, and Math Tutoring"
-  description="Parent-friendly SAT, ACT, and high school math tutoring from a 1600 SAT scorer and University of Pennsylvania graduate."
+  description="SAT, ACT, and high school math tutoring from Rohit Jagga, a UPenn graduate and 1600 SAT scorer."
 >
   <section class="section-shell pt-12 md:pt-18">
-    <div class="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
+    <div class="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
       <div class="fade-rise">
-        <div class="eyebrow">Personalized tutoring for ambitious students</div>
+        <div class="eyebrow">RJ Tutoring</div>
         <h1 class="mt-6 max-w-4xl text-5xl leading-[1.02] text-[color:var(--ink)] md:text-7xl">
-          SAT/ACT &amp; Math Tutoring from a 1600 SAT Scorer and UPenn Graduate
+          SAT/ACT and Math Tutoring with Rohit Jagga
         </h1>
         <p class="mt-6 max-w-2xl text-lg leading-8 text-[color:var(--muted)] md:text-xl">
-          RJ Tutoring helps students strengthen fundamentals, sharpen test strategy, and grow more
-          confident one thoughtful session at a time.
+          UPenn graduate. 1600 SAT scorer. More than 5 years of tutoring and teaching experience.
         </p>
 
         <div class="mt-8 flex flex-wrap gap-4">
-          <a class="button-primary" href={withBase("/contact")}>Request Tutoring</a>
-          <a class="button-secondary" href={withBase("/services")}>View Subjects</a>
+          <a class="button-primary" href={basePath("/contact")}>Request Tutoring</a>
         </div>
 
         <div class="mt-10 flex flex-wrap gap-3">
@@ -40,12 +32,9 @@ const previewSubjects = subjectGroups.flatMap((group) => group.subjects).slice(0
       </div>
 
       <div class="fade-rise surface-card relative overflow-hidden p-5 md:p-7">
-        <div class="absolute right-5 top-5 rounded-full bg-[color:var(--accent-soft)] px-4 py-2 text-xs font-extrabold uppercase tracking-[0.18em] text-[color:var(--accent)]">
-          Parent-friendly. Modern. Trustworthy.
-        </div>
         <div class="overflow-hidden rounded-[1.75rem] bg-[color:var(--surface-soft)]">
           <img
-            src={withBase("/images/rohit-jagga-headshot.svg")}
+            src={assetPath("/images/rohit-jagga-headshot.jpg")}
             alt="Rohit Jagga outdoors with a scenic overlook in the background"
             class="aspect-[4/5] w-full object-cover object-center"
           />
@@ -55,54 +44,36 @@ const previewSubjects = subjectGroups.flatMap((group) => group.subjects).slice(0
   </section>
 
   <section class="section-shell mt-20">
-    <div class="surface-card p-8 md:p-10">
-      <SectionHeading
-        eyebrow="Tutoring approach"
-        title="Built for understanding, not just short-term memorization"
-        description="Sessions are designed to help students learn the reasoning behind the work, practice with intention, and show up more prepared for class, homework, and test day."
-      />
-      <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-        {
-          approachPillars.map((pillar) => (
-            <article class="rounded-[1.5rem] border border-[color:var(--line)] bg-white/70 p-6">
-              <h3 class="text-2xl text-[color:var(--ink)]">{pillar.title}</h3>
-              <p class="mt-3 text-sm leading-7 text-[color:var(--muted)]">{pillar.description}</p>
-            </article>
-          ))
-        }
+    <div class="grid gap-6 lg:grid-cols-[1fr_1fr]">
+      <div class="surface-card p-8 md:p-10">
+        <div class="eyebrow">About Me</div>
+        <h2 class="mt-4 text-4xl leading-tight text-[color:var(--ink)] md:text-5xl">A little background</h2>
+        <div class="mt-6 space-y-5 text-base leading-8 text-[color:var(--muted)]">
+          <p>
+            I graduated from the University of Pennsylvania in 2024 with majors in Computer Science and Economics.
+          </p>
+          <p>
+            In high school, I scored 1600 on the SAT and took courses including AP Calculus BC, AP Biology, AP Physics C, AP Chemistry, and AP Lang.
+          </p>
+          <p>
+            I have 5+ years of tutoring and teaching experience, including work with Art of Problem Solving.
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
 
-  <section class="section-shell mt-20">
-    <SectionHeading
-      eyebrow="Subjects"
-      title="Support across test prep and high school coursework"
-      description="Whether the goal is a stronger SAT score, steadier class performance, or better mathematical confidence, tutoring can be tailored to the student's current level and timeline."
-    />
-    <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-      {
-        previewSubjects.map((subject) => (
-          <SubjectCard {...subject} />
-        ))
-      }
-    </div>
-    <div class="mt-8 flex justify-start">
-      <a class="button-secondary" href={withBase("/services")}>See the full subject list</a>
-    </div>
-  </section>
-
-  <section class="section-shell mt-20">
-    <div class="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
-      <SectionHeading
-        eyebrow="Frequently asked"
-        title="A few common questions from families"
-        description="If you are deciding whether the fit is right, these answers are a good place to start."
-      />
-      <FaqList items={faqItems.slice(0, 4)} />
-    </div>
-    <div class="mt-8">
-      <a class="button-secondary" href={withBase("/faq")}>View all FAQs</a>
+      <div class="surface-card p-8 md:p-10">
+        <div class="eyebrow">Subjects</div>
+        <h2 class="mt-4 text-4xl leading-tight text-[color:var(--ink)] md:text-5xl">What I tutor</h2>
+        <ul class="mt-6 grid gap-3 text-sm leading-7 text-[color:var(--muted)]">
+          {
+            subjectList.map((subject) => (
+              <li class="rounded-2xl border border-[color:var(--line)] bg-white/70 px-4 py-3">
+                {subject}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -110,16 +81,15 @@ const previewSubjects = subjectGroups.flatMap((group) => group.subjects).slice(0
     <div class="surface-card overflow-hidden p-8 md:p-12">
       <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
         <div>
-          <div class="eyebrow">Next step</div>
+          <div class="eyebrow">Contact</div>
           <h2 class="mt-4 text-4xl leading-tight text-[color:var(--ink)] md:text-5xl">
-            Ready to talk through goals, schedule, and the right starting point?
+            Interested in tutoring?
           </h2>
           <p class="mt-5 max-w-2xl text-base leading-8 text-[color:var(--muted)] md:text-lg">
-            Share a little about the student, the subject area, and what success would look like.
-            From there, we can figure out the best plan for moving forward.
+            Go to the contact page to send an inquiry and share the student's grade, subject, goals, and scheduling preferences.
           </p>
         </div>
-        <a class="button-primary" href={withBase("/contact")}>Request Tutoring</a>
+        <a class="button-primary" href={basePath("/contact")}>Request Tutoring</a>
       </div>
     </div>
   </section>
