@@ -28,21 +28,19 @@ export const subjectList = [
   "SAT Math, SAT Reading & Writing",
   "ACT, SSAT (NY), other standardized tests",
   "High school math up to AP Calculus BC",
-  "Contest math basics for AMC, MathCounts, and AIME"
+  "Contest math basics for AMC, MathCounts, and AIME",
+  "Select science and programming courses"
 ];
 
 export const contactFields = [
   "Student name",
   "Parent/guardian name",
-  "Email",
-  "Phone (optional)",
+  "Email or phone",
   "Student grade",
-  "School (optional)",
   "Subject(s)",
   "SAT/ACT/AP test date (if applicable)",
   "Current score or grade (if relevant)",
   "Target score or goal",
   "Preferred days/times",
-  "Online or in-person preference",
   "Anything else I should know?"
 ];
