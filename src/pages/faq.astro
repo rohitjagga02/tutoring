@@ -1,0 +1,37 @@
+---
+import FaqList from "../components/FaqList.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import { faqItems } from "../lib/site";
+
+const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+---
+
+<MainLayout
+  title="FAQ | RJ Tutoring"
+  description="Frequently asked questions about RJ Tutoring's SAT, ACT, and high school math support."
+>
+  <section class="section-shell pt-12 md:pt-18">
+    <SectionHeading
+      eyebrow="FAQ"
+      title="Questions families often ask before getting started"
+      description="This page covers the basics around format, subject coverage, and what the first step usually looks like."
+    />
+  </section>
+
+  <section class="section-shell mt-12">
+    <FaqList items={faqItems} />
+  </section>
+
+  <section class="section-shell mt-20">
+    <div class="surface-card p-8 md:p-10">
+      <h2 class="text-4xl leading-tight text-[color:var(--ink)] md:text-5xl">Still have a specific question?</h2>
+      <p class="mt-5 max-w-2xl text-base leading-8 text-[color:var(--muted)] md:text-lg">
+        The easiest next step is to send a short inquiry with the student's current course or test plan and the main area where support would help most.
+      </p>
+      <div class="mt-8">
+        <a class="button-primary" href={withBase("/contact")}>Request Tutoring</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

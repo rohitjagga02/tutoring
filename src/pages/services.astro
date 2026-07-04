@@ -1,0 +1,51 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import SubjectCard from "../components/SubjectCard.astro";
+import { subjectGroups } from "../lib/site";
+
+const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+---
+
+<MainLayout
+  title="Subjects & Services | RJ Tutoring"
+  description="Explore RJ Tutoring's support for SAT, ACT, algebra, geometry, precalculus, AP Calculus, and selected high school science."
+>
+  <section class="section-shell pt-12 md:pt-18">
+    <SectionHeading
+      eyebrow="Subjects and services"
+      title="Focused academic support for test prep, math coursework, and selected science needs"
+      description="Each tutoring plan can be tailored to a student's class, testing timeline, strengths, and current problem areas."
+    />
+  </section>
+
+  {
+    subjectGroups.map((group) => (
+      <section class="section-shell mt-16">
+        <div class="mb-8 max-w-3xl">
+          <div class="eyebrow">{group.title}</div>
+          <h2 class="mt-4 text-4xl leading-tight text-[color:var(--ink)]">{group.title}</h2>
+          <p class="mt-4 text-base leading-8 text-[color:var(--muted)]">{group.description}</p>
+        </div>
+        <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {group.subjects.map((subject) => <SubjectCard {...subject} />)}
+        </div>
+      </section>
+    ))
+  }
+
+  <section class="section-shell mt-20">
+    <div class="surface-card p-8 md:p-10">
+      <h2 class="text-4xl leading-tight text-[color:var(--ink)] md:text-5xl">
+        Not sure which kind of support fits best?
+      </h2>
+      <p class="mt-5 max-w-2xl text-base leading-8 text-[color:var(--muted)] md:text-lg">
+        Reach out with the student's current class, testing goals, and any specific challenges. A starting plan can be shaped around that context.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a class="button-primary" href={withBase("/contact")}>Request Tutoring</a>
+        <a class="button-secondary" href={withBase("/faq")}>Read the FAQ</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

@@ -1,0 +1,28 @@
+---
+interface Item {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  items: Item[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="space-y-4">
+  {
+    items.map((item) => (
+      <details class="details-card surface-card group p-6" name="faq">
+        <summary class="flex cursor-pointer items-start justify-between gap-4">
+          <span class="text-xl leading-8 text-[color:var(--ink)]">{item.question}</span>
+          <span class="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[color:var(--surface-soft)] text-lg font-bold text-[color:var(--accent)] transition-transform group-open:rotate-45">
+            +
+          </span>
+        </summary>
+        <p class="mt-4 pr-10 text-sm leading-7 text-[color:var(--muted)]">{item.answer}</p>
+      </details>
+    ))
+  }
+</div>
