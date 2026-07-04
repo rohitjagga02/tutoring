@@ -1,6 +1,6 @@
-# RJ Tutoring
+# Tutoring
 
-Static tutoring website built with Astro and Tailwind CSS for GitHub Pages deployment.
+Static website built with Astro and Tailwind CSS for GitHub Pages deployment.
 
 ## Live URL
 
