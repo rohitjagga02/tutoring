@@ -25,13 +25,10 @@ export const assetPath = (path: string) => {
 };
 
 export const subjectList = [
-  "SAT Math",
-  "SAT Reading and Writing",
-  "ACT prep",
-  "Algebra 1 and Algebra 2",
-  "Geometry and Precalculus",
-  "AP Calculus AB/BC",
-  "Biology and selected high school science"
+  "SAT Math, SAT Reading & Writing",
+  "ACT, SSAT (NY), other standardized tests",
+  "High school math up to AP Calculus BC",
+  "Contest math basics for AMC, MathCounts, and AIME"
 ];
 
 export const contactFields = [
