@@ -2,15 +2,15 @@
 import { basePath, navLinks } from "../lib/site";
 ---
 
-<header class="sticky top-0 z-20 border-b border-[color:var(--line)] bg-[rgba(247,244,236,0.78)] backdrop-blur-xl">
+<header class="sticky top-0 z-20 border-b border-[color:var(--line)] bg-[rgba(8,12,24,0.78)] backdrop-blur-xl">
   <div class="section-shell flex flex-wrap items-center justify-between gap-4 py-4">
     <a href={basePath("/")} class="flex items-center gap-3">
-      <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-[color:var(--ink)] text-sm font-extrabold uppercase tracking-[0.18em] text-white">
+      <span class="flex h-11 w-11 items-center justify-center rounded-2xl border border-[color:var(--line)] bg-[color:var(--surface)] text-sm font-extrabold uppercase tracking-[0.18em] text-[color:var(--ink)]">
         RJ
       </span>
       <div>
-        <div class="text-sm font-extrabold uppercase tracking-[0.18em] text-[color:var(--accent)]">RJ Tutoring</div>
-        <div class="text-sm text-[color:var(--muted)]">SAT, ACT, and math tutoring</div>
+        <div class="text-sm font-extrabold uppercase tracking-[0.18em] text-[color:var(--ink)]">Rohit Jagga</div>
+        <div class="text-sm text-[color:var(--muted)]">Tutoring</div>
       </div>
     </a>
 
@@ -22,7 +22,7 @@ import { basePath, navLinks } from "../lib/site";
           </a>
         ))
       }
-      <a class="button-primary !px-4 !py-2 !text-sm" href={basePath("/contact")}>Request Tutoring</a>
+      <a class="button-primary !px-4 !py-2 !text-sm" href={basePath("/contact")}>Contact</a>
     </nav>
   </div>
 </header>

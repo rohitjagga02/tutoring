@@ -1,42 +1,42 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import { assetPath, basePath, credentialHighlights, subjectList } from "../lib/site";
+import { assetPath, basePath, subjectList } from "../lib/site";
 ---
 
 <MainLayout
-  title="RJ Tutoring | SAT, ACT, and Math Tutoring"
-  description="SAT, ACT, and high school math tutoring from Rohit Jagga, a UPenn graduate and 1600 SAT scorer."
+  title="Rohit Jagga | Tutoring"
+  description="SAT, ACT, and high school math tutoring with Rohit Jagga."
 >
   <section class="section-shell pt-12 md:pt-18">
-    <div class="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+    <div class="grid items-center gap-12 lg:grid-cols-[1.08fr_0.92fr]">
       <div class="fade-rise">
-        <div class="eyebrow">RJ Tutoring</div>
+        <div class="eyebrow">About</div>
         <h1 class="mt-6 max-w-4xl text-5xl leading-[1.02] text-[color:var(--ink)] md:text-7xl">
-          SAT/ACT and Math Tutoring with Rohit Jagga
+          Hi, I'm Rohit.
         </h1>
         <p class="mt-6 max-w-2xl text-lg leading-8 text-[color:var(--muted)] md:text-xl">
-          UPenn graduate. 1600 SAT scorer. More than 5 years of tutoring and teaching experience.
+          I tutor SAT, ACT, and high school math, with a focus on making things clear, calm, and
+          straightforward.
+        </p>
+        <p class="mt-4 max-w-2xl text-base leading-8 text-[color:var(--muted)] md:text-lg">
+          I graduated from Penn in 2024, and I've spent the last several years tutoring,
+          teaching, and working with students across test prep and math courses.
         </p>
 
-        <div class="mt-8 flex flex-wrap gap-4">
-          <a class="button-primary" href={basePath("/contact")}>Request Tutoring</a>
-        </div>
-
-        <div class="mt-10 flex flex-wrap gap-3">
-          {
-            credentialHighlights.map((item) => (
-              <span class="pill">{item}</span>
-            ))
-          }
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <a class="button-primary" href={basePath("/contact")}>Contact</a>
+          <span class="text-sm font-medium tracking-[0.08em] text-[color:var(--muted)] uppercase">
+            Penn '24 · 5+ years of tutoring experience
+          </span>
         </div>
       </div>
 
-      <div class="fade-rise surface-card relative overflow-hidden p-5 md:p-7">
-        <div class="overflow-hidden rounded-[1.75rem] bg-[color:var(--surface-soft)]">
+      <div class="fade-rise flex justify-center lg:justify-end">
+        <div class="portrait-shell">
           <img
             src={assetPath("/images/rohit-jagga-headshot.jpg")}
             alt="Rohit Jagga outdoors with a scenic overlook in the background"
-            class="aspect-[4/5] w-full object-cover object-center"
+            class="portrait-image"
           />
         </div>
       </div>
@@ -47,16 +47,22 @@ import { assetPath, basePath, credentialHighlights, subjectList } from "../lib/s
     <div class="grid gap-6 lg:grid-cols-[1fr_1fr]">
       <div class="surface-card p-8 md:p-10">
         <div class="eyebrow">About Me</div>
-        <h2 class="mt-4 text-4xl leading-tight text-[color:var(--ink)] md:text-5xl">A little background</h2>
+        <h2 class="mt-4 text-4xl leading-tight text-[color:var(--ink)] md:text-5xl">
+          A little more about me
+        </h2>
         <div class="mt-6 space-y-5 text-base leading-8 text-[color:var(--muted)]">
           <p>
-            I graduated from the University of Pennsylvania in 2024 with majors in Computer Science and Economics.
+            I graduated from the University of Pennsylvania with majors in Computer Science and
+            Economics, and I enjoy helping students get more comfortable with subjects that can
+            otherwise feel frustrating or rushed.
           </p>
           <p>
-            In high school, I scored 1600 on the SAT and took courses including AP Calculus BC, AP Biology, AP Physics C, AP Chemistry, and AP Lang.
+            My tutoring style is pretty direct: understand the concept, practice the right kinds of
+            problems, and build confidence from there.
           </p>
           <p>
-            I have 5+ years of tutoring and teaching experience, including work with Art of Problem Solving.
+            I've also taught through Art of Problem Solving, which gave me a lot of experience
+            working with different learning styles and goals.
           </p>
         </div>
       </div>
@@ -64,10 +70,14 @@ import { assetPath, basePath, credentialHighlights, subjectList } from "../lib/s
       <div class="surface-card p-8 md:p-10">
         <div class="eyebrow">Subjects</div>
         <h2 class="mt-4 text-4xl leading-tight text-[color:var(--ink)] md:text-5xl">What I tutor</h2>
+        <p class="mt-5 max-w-xl text-base leading-8 text-[color:var(--muted)]">
+          Most of my tutoring is in test prep and high school math, with some science support as
+          well.
+        </p>
         <ul class="mt-6 grid gap-3 text-sm leading-7 text-[color:var(--muted)]">
           {
             subjectList.map((subject) => (
-              <li class="rounded-2xl border border-[color:var(--line)] bg-white/70 px-4 py-3">
+              <li class="subject-chip">
                 {subject}
               </li>
             ))
@@ -83,13 +93,14 @@ import { assetPath, basePath, credentialHighlights, subjectList } from "../lib/s
         <div>
           <div class="eyebrow">Contact</div>
           <h2 class="mt-4 text-4xl leading-tight text-[color:var(--ink)] md:text-5xl">
-            Interested in tutoring?
+            If you'd like to ask about tutoring, reach out here.
           </h2>
           <p class="mt-5 max-w-2xl text-base leading-8 text-[color:var(--muted)] md:text-lg">
-            Go to the contact page to send an inquiry and share the student's grade, subject, goals, and scheduling preferences.
+            The contact page has a short list of what to include and space for a form or email
+            option.
           </p>
         </div>
-        <a class="button-primary" href={basePath("/contact")}>Request Tutoring</a>
+        <a class="button-primary" href={basePath("/contact")}>Go to Contact</a>
       </div>
     </div>
   </section>

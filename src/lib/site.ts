@@ -24,21 +24,12 @@ export const assetPath = (path: string) => {
   return `${base}${normalizedPath}`;
 };
 
-export const credentialHighlights = [
-  "1600 SAT scorer",
-  "UPenn graduate",
-  "5+ years of tutoring experience",
-  "SAT/ACT + high school math"
-];
-
 export const subjectList = [
   "SAT Math",
   "SAT Reading and Writing",
   "ACT prep",
-  "Algebra 1",
-  "Algebra 2",
-  "Geometry",
-  "Precalculus",
+  "Algebra 1 and Algebra 2",
+  "Geometry and Precalculus",
   "AP Calculus AB/BC",
   "Biology and selected high school science"
 ];
