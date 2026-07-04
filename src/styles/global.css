@@ -176,7 +176,7 @@ img {
   height: 100%;
   object-fit: cover;
   object-position: center 24%;
-  transform: translateX(18%) scale(1.28);
+  transform: translateX(9%) scale(1.28);
   transform-origin: center;
 }
 
